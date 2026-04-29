@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bowdl32g5e8xt"]
-
-[ext_resource type="PackedScene" uid="uid://6t0twi5w7joo" path="res://art/character/t-pose/emma_t-pose.tscn" id="1_agfs1"]
-
-[node name="Character" type="Node3D" unique_id=1506677454]
-
-[node name="Emma" parent="." unique_id=1449941613 instance=ExtResource("1_agfs1")]
-
-[editable path="Emma"]
