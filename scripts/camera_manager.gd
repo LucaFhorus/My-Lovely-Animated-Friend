@@ -5,12 +5,14 @@ extends Node
 @onready var back_camera = $"../Cameras/BackCamera"
 @onready var angled_camera_right = $"../Cameras/AngledCameraRight"
 @onready var angled_camera_left = $"../Cameras/AngledCameraLeft"
+@onready var face_camera = $"../AnimatedFriend/Skeleton3D/BoneAttachment3D/FaceCamera"
 
 @onready var cameras = [
 	front_camera, 
 	back_camera, 
 	angled_camera_right, 
-	angled_camera_left]
+	angled_camera_left,
+	face_camera]
 
 var current_camera : int = 0
 
@@ -22,9 +24,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_test()
-	if current_camera == 4:
+	if current_camera == cameras.size():
 		current_camera = 0
-	if current_camera == -4:
+	if current_camera == -cameras.size():
 		current_camera = 0
 	cameras[current_camera].current = true
 
@@ -33,4 +35,5 @@ func _test():
 		print("fuck me")
 		current_camera += 1
 	if Input.is_action_just_pressed("negative_action"):
+		print("fuck you")
 		current_camera -= 1
